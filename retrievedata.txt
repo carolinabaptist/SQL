@@ -23,3 +23,6 @@ SELECT * FROM salesman;
 -- Write a SQL statement to display a string "This is SQL Exercise, Practice and Solution". 
 
 SELECT 'This is SQL Exercise, Practice and Solution' AS message;
+
+-- This query selects three numeric literals (5, 10, and 15) as separate columns.
+SELECT 5, 10, 15;

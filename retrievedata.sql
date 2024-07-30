@@ -65,3 +65,23 @@ SELECT ord_no, ord_date, purch_amt FROM orders WHERE salesman_id = 5001;
 -- From the following table, write a SQL query to find the Nobel Prize winner(s) for the year 1970. Return year, subject and winner. 
 
 SELECT year, subject and winner FROM nobel_win WHERE year = 1970;
+
+-- From the following table, write a SQL query to find the Nobel Prize winner in ‘Literature’ for 1971. Return winner. 
+
+SELECT winner FROM nobel_win WHERE year = 1971 AND subject = 'Literature';
+
+-- From the following table, write a SQL query to locate the Nobel Prize winner ‘Dennis Gabor'. Return year, subject. 
+
+SELECT year, subject FROM nobel_win WHERE winner = 'Dennis Gabor';
+
+-- From the following table, write a SQL query to find the Nobel Prize winners in the field of ‘Physics’ since 1950. Return winner. 
+
+SELECT winner FROM nobel_win WHERE subject = 'Physics' AND year>=1950;
+
+-- From the following table, write a SQL query to find the Nobel Prize winners in ‘Chemistry’ between the years 1965 and 1975. Begin and end values are included. Return year, subject, winner, and country.  
+
+SELECT year, subject, winner, country FROM nobel_win WHERE subject = 'Chemistry' AND year>=1965 AND year<=1975;
+
+-- Write a SQL query to display all details of the Prime Ministerial winners after 1972 of Menachem Begin and Yitzhak Rabin. 
+
+SELECT * FROM nobel_win WHERE AND winner IN ('Menachem Begin', 'Yitzhak Rabin') AND year > 1972 ;

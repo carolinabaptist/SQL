@@ -1,0 +1,25 @@
+-- salesman table structure: salesman_id, name, city, commission
+-- Criação da tabela salesman
+CREATE TABLE salesman (
+    salesman_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    city VARCHAR(50),
+    commission DECIMAL(4,2)
+);
+
+-- Inserção dos dados na tabela salesman
+INSERT INTO salesman (salesman_id, name, city, commission) VALUES
+(5001, 'James Hoog', 'New York', 0.15),
+(5002, 'Nail Knite', 'Paris', 0.13),
+(5005, 'Pit Alex', 'London', 0.11),
+(5006, 'Mc Lyon', 'Paris', 0.14),
+(5007, 'Paul Adam', 'Rome', 0.13),
+(5003, 'Lauson Hen', 'San Jose', 0.12);
+
+-- Write a SQL statement that displays all the information about all salespeople.
+
+SELECT * FROM salesman;
+
+-- Write a SQL statement to display a string "This is SQL Exercise, Practice and Solution". 
+
+SELECT 'This is SQL Exercise, Practice and Solution' AS message;

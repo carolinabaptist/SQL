@@ -49,3 +49,19 @@ SELECT DISTINCT salesman_id FROM orders;
 -- From the following table, write a SQL query to locate salespeople who live in the city of 'Paris'. Return salesperson's name, city. 
 
 SELECT name, city FROM salesman WHERE city = 'Paris';
+
+-- From the following table, write a SQL query to find customers whose grade is 200. Return customer_id, cust_name, city, grade, salesman_id.  
+
+SELECT customer_id, cust_name, city, grade, salesman_id FROM customer WHERE grade = 200;
+
+-- or
+
+SELECT * FROM customer WHERE grade = 200;
+
+-- From the following table, write a SQL query to find orders that are delivered by a salesperson with ID. 5001. Return ord_no, ord_date, purch_amt.  
+
+SELECT ord_no, ord_date, purch_amt FROM orders WHERE salesman_id = 5001;
+
+-- From the following table, write a SQL query to find the Nobel Prize winner(s) for the year 1970. Return year, subject and winner. 
+
+SELECT year, subject and winner FROM nobel_win WHERE year = 1970;

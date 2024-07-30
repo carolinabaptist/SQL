@@ -1,5 +1,5 @@
 -- salesman table structure: salesman_id, name, city, commission
--- Criação da tabela salesman
+-- Creation of salesman table
 CREATE TABLE salesman (
     salesman_id INT PRIMARY KEY,
     name VARCHAR(50),
@@ -7,7 +7,6 @@ CREATE TABLE salesman (
     commission DECIMAL(4,2)
 );
 
--- Inserção dos dados na tabela salesman
 INSERT INTO salesman (salesman_id, name, city, commission) VALUES
 (5001, 'James Hoog', 'New York', 0.15),
 (5002, 'Nail Knite', 'Paris', 0.13),

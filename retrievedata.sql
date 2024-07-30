@@ -166,3 +166,20 @@ GROUP BY pro_com;
 SELECT pro_name, pro_price
 FROM item_mast
 WHERE pro_price = (SELECT MIN(pro_price) FROM item_mast);
+
+-- From the following table, write a SQL query to find the unique last name of all employees. Return emp_lname.  
+
+SELECT DISTINCT emp_lname
+FROM emp_details;
+
+-- From the following table, write a SQL query to find the details of employees whose last name is 'Snares'. Return emp_idno, emp_fname, emp_lname, and emp_dept.  
+
+SELECT *
+FROM emp_details
+WHERE emp_lname = 'Snares';
+
+-- From the following table, write a SQL query to retrieve the details of the employees who work in the department 57. Return emp_idno, emp_fname, emp_lname and emp_dept.
+
+SELECT *
+FROM emp_details
+WHERE emp_dept = 57;

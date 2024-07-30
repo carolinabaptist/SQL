@@ -119,3 +119,50 @@ SELECT * FROM nobel_win WHERE winner = 'Johannes Georg Bednorz';
 
 SELECT * FROM nobel_win WHERE subject NOT LIKE 'P%' ORDER BY year DESC, winner;
 
+-- From the following table, write a SQL query to find the details of 1970 Nobel Prize winners. Order the results by subject, ascending except for 'Chemistry' and ‘Economics’ which will come at the end of the result set. Return year, subject, winner, country, and category.  
+
+SELECT * 
+FROM nobel_win 
+WHERE year = 1970 
+ORDER BY
+	CASE
+    		WHEN subject = 'Economics' THEN 2
+    		WHEN subject = 'Chemistry' THEN 1
+	END ASC,
+	subject;
+
+-- From the following table, write a SQL query to select a range of products whose price is in the range Rs.200 to Rs.600. Begin and end values are included. Return pro_id, pro_name, pro_price, and pro_com.  
+
+SELECT * 
+FROM item_mast
+WHERE BETWEEN 200 AND 600;
+
+--From the following table, write a SQL query to calculate the average price for a manufacturer code of 16. Return avg.  
+
+SELECT AVG(pro_price) AS media_valor
+FROM item_mast
+WHERE pro_com = 16;
+
+--From the following table, write a SQL query to display the pro_name as 'Item Name' and pro_priceas 'Price in Rs.'  
+
+SELECT pro_name as "Item Name", pro_price AS "Price in Rs."
+FROM item_mast;
+
+-- From the following table, write a SQL query to find the items whose prices are higher than or equal to $250. Order the result by product price in descending, then product name in ascending. Return pro_name and pro_price.  
+
+SELECT pro_name, pro_price
+FROM item_mast
+WHERE pro_price >= 250
+ORDER BY pro_price DESC, pro_name; 
+
+-- From the following table, write a SQL query to calculate average price of the items for each company. Return average price and company code. 
+
+SELECT AVG(pro_price), pro_com
+FROM item_mast
+GROUP BY pro_com;
+
+-- From the following table, write a SQL query to find the cheapest item(s). Return pro_name and, pro_price. 
+
+SELECT pro_name, pro_price
+FROM item_mast
+WHERE pro_price = (SELECT MIN(pro_price) FROM item_mast);

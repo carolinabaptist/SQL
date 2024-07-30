@@ -23,5 +23,29 @@ SELECT * FROM salesman;
 
 SELECT 'This is SQL Exercise, Practice and Solution' AS message;
 
--- This query selects three numeric literals (5, 10, and 15) as separate columns.
+-- Write a SQL query to display three numbers in three columns. 
 SELECT 5, 10, 15;
+
+-- Write a SQL query to display the sum of two numbers 10 and 15 from the RDBMS server. 
+
+SELECT 10 + 15;
+
+-- Write an SQL query to display the result of an arithmetic expression. 
+
+SELECT 10 + 15 - 5 * 2;
+
+-- Write a SQL statement to display specific columns such as names and commissions for all salespeople.
+
+SELECT name, commission FROM salesman;  
+
+-- Write a query to display the columns in a specific order, such as order date, salesman ID, order number, and purchase amount for all orders. 
+
+SELECT ord_date, salesman_id, ord_no, purch_amt FROM orders;
+
+-- From the following table, write a SQL query to identify the unique salespeople ID. Return salesman_id. 
+
+SELECT DISTINCT salesman_id FROM orders;
+
+-- From the following table, write a SQL query to locate salespeople who live in the city of 'Paris'. Return salesperson's name, city. 
+
+SELECT name, city FROM salesman WHERE city = 'Paris';

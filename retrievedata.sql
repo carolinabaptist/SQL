@@ -85,3 +85,37 @@ SELECT year, subject, winner, country FROM nobel_win WHERE subject = 'Chemistry'
 -- Write a SQL query to display all details of the Prime Ministerial winners after 1972 of Menachem Begin and Yitzhak Rabin. 
 
 SELECT * FROM nobel_win WHERE AND winner IN ('Menachem Begin', 'Yitzhak Rabin') AND year > 1972 ;
+
+
+-- From the following table, write a SQL query to retrieve the details of the winners whose first names match with the string ‘Louis’. Return year, subject, winner, country, and category.  
+
+SELECT * FROM nobel_win WHERE winner LIKE 'Louis %';
+
+-- From the following table, write a SQL query that combines the winners in Physics, 1970 and in Economics, 1971. Return year, subject, winner, country, and category. 
+
+SELECT * FROM nobel_win WHERE (subject = 'Physics' AND year = 1970) 
+
+UNION 
+
+(SELECT * FROM nobel_win WHERE (subject = 'Economics' AND year = 1971));
+
+-- From the following table, write a SQL query to find the Nobel Prize winners in 1970 excluding the subjects of Physiology and Economics. Return year, subject, winner, country, and category. 
+
+SELECT * FROM nobel_win WHERE subject NOT IN ('Physiolgy', 'Economics') AND year = 1970;
+
+-- From the following table, write a SQL query to combine the winners in 'Physiology' before 1971 and winners in 'Peace' on or after 1974. Return year, subject, winner, country, and category.
+
+SELECT * FROM nobel_win WHERE (subject = 'Physiolgy' AND year < 1971)
+
+UNION
+
+(SELECT * FROM nobel_win WHERE (subject = 'Peace' AND year >= 1971));
+
+-- From the following table, write a SQL query to find the details of the Nobel Prize winner 'Johannes Georg Bednorz'. Return year, subject, winner, country, and category.  
+
+SELECT * FROM nobel_win WHERE winner = 'Johannes Georg Bednorz';
+
+-- From the following table, write a SQL query to find Nobel Prize winners for the subject that does not begin with the letter 'P'. Return year, subject, winner, country, and category. Order the result by year, descending and winner in ascending.  
+
+SELECT * FROM nobel_win WHERE subject NOT LIKE 'P%' ORDER BY year DESC, winner;
+

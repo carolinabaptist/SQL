@@ -38,7 +38,59 @@ WHERE customer_id IN (3007,3008,3009);
 --values are included). Return salesman_id, name, city, and 
 --commission.  
 
-
 SELECT *
 FROM salesman
 WHERE comission BETWEEN 0.12 AND 0.14;
+
+--From the following table, write a SQL query to select orders 
+--between 500 and 4000 (begin and end values are included). 
+--Exclude orders amount 948.50 and 1983.43. Return ord_no, 
+--purch_amt, ord_date, customer_id, and salesman_id. 
+
+SELECT *
+FROM orders
+WHERE (purch_amt BETWEEN 500 AND 4000) 
+AND NOT purch_amt IN (948.50, 1983.43);
+
+--From the following table, write a SQL query to retrieve the 
+--details of the salespeople whose names begin with any letter 
+--between 'A' and 'L' (not inclusive). Return salesman_id, name, 
+--city, commission. 
+
+SELECT *
+FROM salesman
+WHERE name BETWEEN 'A' AND 'L';
+
+--From the following table, write a SQL query to find the details 
+--of all salespeople except those whose names begin with any 
+--letter between 'A' and 'M'. Return salesman_id, name, city, 
+--commission.  
+
+SELECT *
+FROM salesman
+WHERE name NOT BETWEEN 'A' AND 'M';
+
+--From the following table, write a SQL query to retrieve the 
+--details of the customers whose names begins with the letter 'B'.
+--Return customer_id, cust_name, city, grade, salesman_id.
+
+SELECT *
+FROM customers
+WHERE cust_name LIKE 'B%';
+
+--From the following table, write a SQL query to find the details
+--of the customers whose names end with the letter 'n'. 
+--Return customer_id, cust_name, city, grade, salesman_id.
+
+SELECT *
+FROM customers
+WHERE cust_name LIKE '%n';
+
+--From the following table, write a SQL query to find the details 
+--of those salespeople whose names begin with ‘N’ and the fourth 
+--character is 'l'. Rests may be any character. 
+--Return salesman_id, name, city, commission. 
+
+SELECT *
+FROM salesman
+WHERE name LIKE 'N__l%';

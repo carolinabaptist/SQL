@@ -94,3 +94,80 @@ WHERE cust_name LIKE '%n';
 SELECT *
 FROM salesman
 WHERE name LIKE 'N__l%';
+
+--From the following table, write a SQL query to find those 
+--rows where col1 contains the escape character underscore ( _ ). 
+--Return col1.
+
+SELECT col1
+FROM testtable
+WHERE col1 LIKE '%/_%' ESCAPE '/';
+
+--From the following table, write a SQL query to identify those 
+--rows where col1 does not contain the escape character underscore
+--( _ ). Return col1.
+
+SELECT col1
+FROM testtable
+WHERE col1 NOT LIKE '%/_%'; ESCAPE '/';
+
+--From the following table, write a SQL query to find rows in 
+--which col1 contains the forward slash character ( / ). 
+--Return col1.
+
+SELECT col1
+FROM testtable
+WHERE col1 LIKE '%//%' ESCAPE '/';
+
+--From the following table, write a SQL query to find those 
+--rows where col1 contains the string ( _/ ). Return col1.
+
+SELECT col1
+FROM testtable
+WHERE col1 LIKE '%/_//%' ESCAPE '/';
+
+--From the following table, write a SQL query to find those rows
+--where col1 does not contain the string ( _/ ). Return col1.
+
+SELECT col1
+FROM testtable
+WHERE col1 NOT LIKE '%/_//%' ESCAPE '/';
+
+--From the following table, write a SQL query to find those rows 
+--where col1 contains the character percent ( % ). Return col1.
+
+SELECT col1
+FROM testtable
+WHERE col1 LIKE '%/%%' ESCAPE '/';
+
+--From the following table, write a SQL query to find those rows 
+--where col1 does not contain the character percent ( % ). 
+--Return col1.
+
+SELECT col1
+FROM testtable
+WHERE col1 NOT LIKE '%/%%' ESCAPE '/';
+
+--From the following table, write a SQL query to find all those 
+--customers who does not have any grade. 
+--Return customer_id, cust_name, city, grade, salesman_id.
+
+SELECT *
+FROM customer
+WHERE grade IS NULL;
+
+--From the following table, write a  SQL query to locate all 
+--customers with a grade value. Return customer_id, cust_name,
+--city, grade, salesman_id.
+
+SELECT *
+FROM customer
+WHERE grade IS NOT NULL;
+
+--From the following table, write a SQL query to locate the 
+--employees whose last name begins with the letter 'D'. 
+--Return emp_idno, emp_fname, emp_lname and emp_dept. 
+
+SELECT *
+FROM emp_details
+WHERE emp_lname LIKE '%D%';
